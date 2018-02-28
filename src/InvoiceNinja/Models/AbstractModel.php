@@ -56,8 +56,7 @@ class AbstractModel
 
     public static function findByNumber($number)
     {
-        $url = static::getRoute();
-        $url .= '?' . http_build_query(['invoice_number' => $number]);
+        $url = sprintf('%s?invoice_number=%s', static::getRoute(), $number);
 
         return static::sendRequest($url);
     }
