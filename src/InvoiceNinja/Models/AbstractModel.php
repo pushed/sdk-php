@@ -54,6 +54,14 @@ class AbstractModel
         return $result;
     }
 
+    public static function findByNumber($number)
+    {
+        $url = static::getRoute();
+        $url .= '?' . http_build_query(['invoice_number' => $number]);
+
+        return static::sendRequest($url);
+    }
+
     /*
     public static function whereClientId($clientId)
     {
