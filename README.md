@@ -39,6 +39,14 @@ Retrieve a client by its primary key.
 
     $client = Client::find(1);
 
+Retrieve an invoice (by invoice id)
+
+    $invoice = Invoice::find(1);
+
+Retrieve an invoice (by invoice number)
+
+    $invoice = Invoice::findByNumber('invoice_number');
+
 ### Inserting & Updating Models
 
 Create a new client
